@@ -1,11 +1,9 @@
 language: php
 
 php:
-  - 5.3
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
+  - 7.1
+  - 7.2
+  - 7.3
   - hhvm
 
 sudo: false
@@ -15,20 +13,18 @@ cache:
     - $HOME/.composer
 
 env:
-  - SYMFONY_VERSION=2.8.*
+  - SYMFONY_VERSION=3.4.*
 
 matrix:
   include:
-    - php: 5.6
-      env: SYMFONY_VERSION=2.3.*
-    - php: 5.6
-      env: SYMFONY_VERSION=2.7.*
-    - php: 7.0
-      env: SYMFONY_VERSION=2.8.*@dev
-    - php: 7.0
-      env: SYMFONY_VERSION=^3.0
-    - php: 7.0
-      env: SYMFONY_VERSION=^3.0@dev
+    - php: 7.1
+      env: SYMFONY_VERSION=^3.4
+    - php: 7.1
+      env: SYMFONY_VERSION=^4.3
+    - php: 7.2
+      env: SYMFONY_VERSION=^4.3
+    - php: 7.2
+      env: SYMFONY_VERSION=^5
     - php: 5.3
       env: COMPOSER_FLAGS="--prefer-lowest"
 
