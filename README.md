@@ -6,7 +6,7 @@ Symfony ffmpeg bundle
 This bundle provides a simple wrapper for the [PHP_FFmpeg](https://github.com/alchemy-fr/PHP-FFmpeg) library,
 exposing the library as a Symfony service.
 
-#### This fork adds Symfony4 support and drops legacy Symfony2 and PHP5 support ####
+#### This fork adds Symfony4 and Symfony5 support and drops legacy Symfony2 and PHP5 support ####
 
 ### Download FFmpegBundle using composer
 
