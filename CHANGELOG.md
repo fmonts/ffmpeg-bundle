@@ -1,3 +1,7 @@
+## 0.8.1
+- Fixed deprecation message in Symfony: 'Method "Symfony\Component\Config\Definition\ConfigurationInterface::getConfigTreeBuilder()" might add "TreeBuilder" as a native return type declaration in the future. Do the same in implementation "Dubture\FFmpegBundle\DependencyInjection\Configuration" now to avoid errors or add an explicit @return annotation to suppress this message.'
+- Fixed errors in test classes about method declarations not compatible with parents
+
 ## 0.8.0
 - Add support for PHP 8.0 and 8.1
 - Add support for Symfony6
