@@ -5,6 +5,8 @@ namespace Dubture\FFmpegBundle\Tests\Unit\DependencyInjection;
 use Dubture\FFmpegBundle\DependencyInjection\Configuration;
 use Dubture\FFmpegBundle\DependencyInjection\DubtureFFmpegExtension;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionConfigurationTestCase;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 
 /**
  * Test the configuration parsed from YAML.
@@ -16,7 +18,7 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
     /**
      * {@inheritDoc}
      */
-    protected function getContainerExtension()
+    protected function getContainerExtension(): ExtensionInterface
     {
         return new DubtureFFmpegExtension();
     }
@@ -24,7 +26,7 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
     /**
      * {@inheritDoc}
      */
-    protected function getConfiguration()
+    protected function getConfiguration(): ConfigurationInterface
     {
         return new Configuration();
     }

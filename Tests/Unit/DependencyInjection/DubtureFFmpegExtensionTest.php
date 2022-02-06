@@ -16,24 +16,24 @@ class DubtureFFmpegExtensionTest extends AbstractExtensionTestCase
     /**
      * {@inheritDoc}
      */
-    protected function getContainerExtensions()
+    protected function getContainerExtensions(): array
     {
-        return array(
+        return [
             new DubtureFFmpegExtension(),
-        );
+        ];
     }
 
     /**
      * {@inheritDoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
-        $this->load(array(
+        $this->load([
             'ffmpeg_binary' => '/usr/local/bin/ffmpeg',
             'ffprobe_binary' => '/usr/local/bin/ffprobe',
-        ));
+        ]);
     }
 
     public function testAfterLoadingTheCorrectParametersHaveBeenSet()
