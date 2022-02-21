@@ -1,24 +1,28 @@
 {
     "name": "fmonts/ffmpeg-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony bundle to provide PHP-FFmpeg as a Symfony service (https://github.com/alchemy-fr/PHP-FFmpeg)",
+    "description": "Symfony bundle to provide PHP-FFmpeg as a Symfony service (https://github.com/PHP-FFMpeg/PHP-FFMpeg/)",
     "keywords": ["multimedia", "video processing", "video", "audio processing", "audio", "avconv", "ffmpeg", "avprobe", "ffprobe"],
     "license": "MIT",
     "authors": [
         {
             "name": "Robert Gruendler",
             "email": "r.gruendler@gmail.com"
+        },
+        {
+            "name": "Francesco Montanari",
+            "email": "francesco@trafficmanager.com"
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0 || ^8.1",
-        "php-ffmpeg/php-ffmpeg": ">=0.11",
-        "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0",
-        "symfony/framework-bundle": "^4.4 || ^5.4 || ^6.0"
+        "php": "^8.0 || ^8.1",
+        "php-ffmpeg/php-ffmpeg": "^1.0",
+        "symfony/dependency-injection": "^5.4 || ^6.0",
+        "symfony/framework-bundle": "^5.4 || ^6.0"
     },
     "require-dev": {
-        "matthiasnoback/symfony-dependency-injection-test": "^2.3 || ^3.0 || ^4.3",
-        "phpunit/phpunit": "^8.0 || ^9.0"
+        "matthiasnoback/symfony-dependency-injection-test": "^4.0",
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
         "psr-4": { "Dubture\\FFmpegBundle\\": "" }

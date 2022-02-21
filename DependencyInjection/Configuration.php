@@ -18,12 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('dubture_f_fmpeg');
-        if (method_exists($treeBuilder, 'getRootNode')) {
-            $rootNode = $treeBuilder->getRootNode();
-        } else {
-            // BC for symfony/config < 4.2
-            $rootNode = $treeBuilder->root('dubture_f_fmpeg');
-        }
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()
