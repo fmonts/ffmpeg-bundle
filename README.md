@@ -46,6 +46,8 @@ dubture_f_fmpeg:
   temporary_directory: /var/ffmpeg-tmp
 ```
 
+> Note: The `temporary_directory` key is only used for writing [two-pass logs](https://ffmpeg.org/ffmpeg.html#Video-Options).
+
 ### Usage
 
 ```php
