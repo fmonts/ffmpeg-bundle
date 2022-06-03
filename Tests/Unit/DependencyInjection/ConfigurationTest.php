@@ -38,6 +38,7 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
             'ffprobe_binary' => '/usr/local/bin/ffprobe',
             'binary_timeout' => 60,
             'threads_count' => 4,
+            'temporary_directory' => ''
         );
 
         $sources = array(
@@ -57,6 +58,7 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
             'ffprobe_binary' => '/usr/local/bin/ffprobe',
             'binary_timeout' => 300,
             'threads_count' => 2,
+            'temporary_directory' => '/var/ffmpeg-tmp'
         );
 
         $sources = array(

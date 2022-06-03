@@ -43,6 +43,7 @@ dubture_f_fmpeg:
   ffprobe_binary: /usr/bin/ffprobe
   binary_timeout: 300 # Use 0 for infinite
   threads_count: 4
+  temporary_directory: /var/ffmpeg-tmp
 ```
 
 ### Usage

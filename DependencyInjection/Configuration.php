@@ -26,6 +26,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('ffprobe_binary')->isRequired()->end()
                 ->scalarNode('binary_timeout')->defaultValue(60)->end()
                 ->scalarNode('threads_count')->defaultValue(4)->end()
+                ->scalarNode('temporary_directory')->defaultValue('')->end()
             ->end()
         ->end();
 
