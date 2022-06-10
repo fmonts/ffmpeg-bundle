@@ -1,4 +1,4 @@
-Symfony ffmpeg bundle
+Symfony FFmpeg bundle
 =====================
 
 [![Latest Stable Version](https://poser.pugx.org/fmonts/ffmpeg-bundle/v/stable.svg)](https://packagist.org/packages/fmonts/ffmpeg-bundle) [![Total Downloads](https://poser.pugx.org/fmonts/ffmpeg-bundle/downloads.svg)](https://packagist.org/packages/fmonts/ffmpeg-bundle) [![Latest Unstable Version](https://poser.pugx.org/fmonts/ffmpeg-bundle/v/unstable.svg)](https://packagist.org/packages/fmonts/ffmpeg-bundle) [![License](https://poser.pugx.org/fmonts/ffmpeg-bundle/license.svg)](https://packagist.org/packages/fmonts/ffmpeg-bundle)
@@ -6,36 +6,21 @@ Symfony ffmpeg bundle
 This bundle provides a simple wrapper for the [PHP_FFmpeg](https://github.com/alchemy-fr/PHP-FFmpeg) library,
 exposing the library as a Symfony service.
 
-#### This fork adds Symfony4 and Symfony5 support and drops legacy Symfony2 and PHP5 support ####
+#### This fork adds Symfony4, Symfony5 and Symfony6 support and drops legacy Symfony2/3 and PHP5 support ####
 
-### Download FFmpegBundle using composer
+### Set up the bundle
 
-Require the bundle with composer:
+0. Install FFmpeg and find out where the binaries are located. Example on Ubuntu/Debian:
 
 ```bash
-$ composer require fmonts/ffmpeg-bundle "^0.7"
+$ sudo apt install ffmpeg
+$ whereis ffmpeg
+# outputs: ffmpeg: /usr/bin/ffmpeg
+$ whereis ffprobe
+# outputs: ffmpeg: /usr/bin/ffprobe
 ```
 
-Composer will install the bundle to your project's ``vendor/fmonts/ffmpeg-bundle`` directory.
-
-### Enable the bundle
-
-Enable the bundle in the kernel
-> Note: In a default Symfony application that uses Symfony Flex, bundles are enabled/disabled automatically for you when installing/removing them, so you don't need to look at or edit this bundles.php file.
-
-```php
-<?php
-// config/bundles.php
-
-return [
-    // ...
-    Dubture\FFmpegBundle\DubtureFFmpegBundle::class => ['all' => true],
-];
-```
-
-### Configuration
-
-Configure which ffmpeg binary to use in `packages/dubture_f_fmpeg.yaml` or in your `parameters.yaml` file:
+1. Create the required configuration in a yaml file, such as `config/packages/dubture_f_fmpeg.yaml`:
 
 ```yaml
 dubture_f_fmpeg:
@@ -48,20 +33,30 @@ dubture_f_fmpeg:
 
 > Note: The `temporary_directory` key is only used for writing [two-pass logs](https://ffmpeg.org/ffmpeg.html#Video-Options).
 
+2. Require the bundle with composer:
+
+```bash
+$ composer require fmonts/ffmpeg-bundle
+```
+
 ### Usage
 
 ```php
-$ffmpeg = $this->get('dubture_ffmpeg.ffmpeg');
-
-// Open video
-$video = $ffmpeg->open('/your/source/folder/input.avi');
-
-// Resize to 1280x720
-$video
-  ->filters()
-  ->resize(new Dimension(1280, 720), ResizeFilter::RESIZEMODE_INSET)
-  ->synchronize();
-
-// Start transcoding and save video
-$video->save(new X264(), '/your/target/folder/video.mp4');
+class VideoController extends AbstractController
+{
+    public function resize(FFMpeg $FFMpeg): Response
+    {
+        // Open video
+        $video = $FFMpeg->open('/your/source/folder/input.avi');
+        
+        // Resize to 1280x720
+        $video
+          ->filters()
+          ->resize(new Dimension(1280, 720), ResizeFilter::RESIZEMODE_INSET)
+          ->synchronize();
+        
+        // Start transcoding and save video
+        $video->save(new X264(), '/your/target/folder/video.mp4');
+    }
+}
 ```
