@@ -3,3 +3,4 @@ dubture_f_fmpeg:
     ffprobe_binary: /usr/local/bin/ffprobe
     binary_timeout: 300
     threads_count: 2
+    temporary_directory: /var/ffmpeg-tmp
