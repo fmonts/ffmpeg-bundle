@@ -1,3 +1,8 @@
+## 0.8.2
+- Add `temporary_directory` option for two-pass logging, 
+related to [PR 855 PHP-FFMpeg](https://github.com/PHP-FFMpeg/PHP-FFMpeg/pull/855).
+Thanks to @ToshY
+
 ## 0.8.1
 - Fixed deprecation message in Symfony: 'Method "Symfony\Component\Config\Definition\ConfigurationInterface::getConfigTreeBuilder()" might add "TreeBuilder" as a native return type declaration in the future. Do the same in implementation "Dubture\FFmpegBundle\DependencyInjection\Configuration" now to avoid errors or add an explicit @return annotation to suppress this message.'
 - Fixed errors in test classes about method declarations not compatible with parents
