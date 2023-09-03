@@ -1,3 +1,6 @@
+## 0.8.3
+- Add return type declaration to `DubtureFFmpegExtension::load()`, to fix the deprecation message `Method ExtensionInterface::load()" might add "void" as a native return type declaration in the future.`
+
 ## 0.8.2
 - Add `temporary_directory` option for two-pass logging, 
 related to [PR 855 PHP-FFMpeg](https://github.com/PHP-FFMpeg/PHP-FFMpeg/pull/855).
