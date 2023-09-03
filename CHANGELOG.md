@@ -1,3 +1,6 @@
+## 0.8.4
+- Add support for any PHP version >= 8.0
+
 ## 0.8.3
 - Add return type declaration to `DubtureFFmpegExtension::load()`, to fix the deprecation message `Method ExtensionInterface::load()" might add "void" as a native return type declaration in the future.`
 
