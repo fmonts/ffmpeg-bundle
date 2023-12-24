@@ -1,3 +1,6 @@
+## 0.8.5
+- Add support for Symfony7 in composer.json
+
 ## 0.8.4
 - Add support for any PHP version >= 8.0
 
