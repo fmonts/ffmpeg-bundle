@@ -39,6 +39,12 @@ dubture_f_fmpeg:
 $ composer require fmonts/ffmpeg-bundle
 ```
 
+3. Add, in services.yaml, under `services`:
+
+```
+FFMpeg\FFMpeg: '@dubture_ffmpeg.ffmpeg'
+```
+
 ### Usage
 
 ```php
