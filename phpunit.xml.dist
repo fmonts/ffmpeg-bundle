@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="./Tests/bootstrap.php" colors="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="./Tests/bootstrap.php" colors="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd">
   <testsuites>
     <testsuite name="unit">
       <directory suffix="Test.php">./Tests/Unit</directory>
     </testsuite>
   </testsuites>
   <!-- Code coverage filter -->
-  <coverage>
+  <source>
     <include>
       <directory>./</directory>
     </include>
@@ -14,5 +14,5 @@
       <directory>./Tests</directory>
       <directory>./vendor</directory>
     </exclude>
-  </coverage>
+  </source>
 </phpunit>
