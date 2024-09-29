@@ -1,3 +1,7 @@
+## 0.8.6
+- Fix Symfony 7.1 deprecation of `Symfony\Component\HttpKernel\DependencyInjection\Extension`
+- Add option defaults to prevent error on `composer require` when `config/packages/dubture_f_fmpeg.yaml` is not present
+
 ## 0.8.5
 - Add support for Symfony7 in composer.json
 
