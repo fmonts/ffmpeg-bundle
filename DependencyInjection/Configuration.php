@@ -22,13 +22,31 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('ffmpeg_binary')->isRequired()->end()
-                ->scalarNode('ffprobe_binary')->isRequired()->end()
-                ->scalarNode('binary_timeout')->defaultValue(60)->end()
-                ->scalarNode('threads_count')->defaultValue(4)->end()
-                ->scalarNode('temporary_directory')->defaultValue('')->end()
-            ->end()
-        ->end();
+                ->scalarNode('ffmpeg_binary')
+                    ->defaultValue('/usr/bin/ffmpeg')
+                    ->info('Path to the ffmpeg binary')
+                ->end()
+
+                ->scalarNode('ffprobe_binary')
+                    ->defaultValue('/usr/bin/ffprobe')
+                    ->info('Path to the ffprobe binary')
+                ->end()
+
+                ->integerNode('binary_timeout')
+                    ->defaultValue(300)
+                    ->info('Maximum execution time for ffmpeg/ffprobe binaries. Use 0 for infinite.')
+                ->end()
+
+                ->integerNode('threads_count')
+                    ->defaultValue(4)
+                    ->info('Number of threads used by ffmpeg')
+                ->end()
+
+                ->scalarNode('temporary_directory')
+                    ->defaultValue('%kernel.cache_dir%/ffmpeg')
+                    ->info('Temporary directory used by ffmpeg')
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }
