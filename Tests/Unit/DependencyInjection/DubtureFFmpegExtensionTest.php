@@ -40,9 +40,9 @@ class DubtureFFmpegExtensionTest extends AbstractExtensionTestCase
     {
         $this->assertContainerBuilderHasParameter('dubture_ffmpeg.binary', '/usr/local/bin/ffmpeg');
         $this->assertContainerBuilderHasParameter('dubture_ffprobe.binary', '/usr/local/bin/ffprobe');
-        $this->assertContainerBuilderHasParameter('dubture_ffmpeg.binary_timeout', 60);
+        $this->assertContainerBuilderHasParameter('dubture_ffmpeg.binary_timeout', 300);
         $this->assertContainerBuilderHasParameter('dubture_ffmpeg.threads_count', 4);
-        $this->assertContainerBuilderHasParameter('dubture_ffmpeg.temporary_directory', '');
+        $this->assertContainerBuilderHasParameter('dubture_ffmpeg.temporary_directory', '%kernel.cache_dir%/ffmpeg');
     }
 
     public function testAfterLoadingTheFFMpegServiceExists()

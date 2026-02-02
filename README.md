@@ -6,7 +6,7 @@ Symfony FFmpeg bundle
 This bundle provides a simple wrapper for the [PHP_FFmpeg](https://github.com/alchemy-fr/PHP-FFmpeg) library,
 exposing the library as a Symfony service.
 
-#### This fork adds Symfony5, Symfony6 and Symfony7 support and drops legacy Symfony and PHP support ####
+#### This fork adds Symfony5, Symfony6, Symfony7, and Symfony8 support and drops legacy Symfony and PHP support ####
 
 ### Set up the bundle
 
@@ -102,7 +102,7 @@ class VideoController extends AbstractController
 
 ### Supported Symfony and PHP Versions
 
-- Symfony Versions: 5.4, 6.x, and 7.x
+- Symfony Versions: 5.4, 6.x, 7.x, and 8.x
 - PHP Versions: 8.0 and higher 
 
 For further documentation, visit the official [PHP-FFmpeg](https://github.com/alchemy-fr/PHP-FFmpeg) library to explore more options and features.

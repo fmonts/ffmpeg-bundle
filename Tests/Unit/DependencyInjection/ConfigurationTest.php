@@ -36,9 +36,9 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
         $expectedConfiguration = array(
             'ffmpeg_binary' => '/usr/local/bin/ffmpeg',
             'ffprobe_binary' => '/usr/local/bin/ffprobe',
-            'binary_timeout' => 60,
+            'binary_timeout' => 300,
             'threads_count' => 4,
-            'temporary_directory' => ''
+            'temporary_directory' => '%kernel.cache_dir%/ffmpeg'
         );
 
         $sources = array(
