@@ -44,6 +44,8 @@ Extract the binaries to a folder and note their location, e.g.:
   ffprobe_binary: 'C:\Program Files\FFMpeg\ffprobe.exe'
 ```
 
+---
+
 1. Create the required configuration in `config/packages/dubture_f_fmpeg.yaml` (or rename it if using a different setup):
 
 ```yaml

@@ -1,5 +1,6 @@
 ## 0.8.7
 - Add support for Symfony8 in composer.json
+- Replace XML service configuration with PHP to avoid Symfony 7.4 deprecation
 
 ## 0.8.6
 - Fix Symfony 7.1 deprecation of `Symfony\Component\HttpKernel\DependencyInjection\Extension`

@@ -22,8 +22,8 @@ class DubtureFFmpegExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('factories.xml');
+        $loader = new Loader\PhpFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('factories.php');
 
         $container->setParameter('dubture_ffmpeg.binary', $config['ffmpeg_binary']);
         $container->setParameter('dubture_ffprobe.binary', $config['ffprobe_binary']);
